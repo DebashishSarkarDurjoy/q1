@@ -53,8 +53,7 @@ function decodeShortCode(shortCode) {
     shopDate: new Date(), // the date the customer shopped,
     transactionId: transactionReps_switch[transaction_id] // transaction id goes here
   };
-  console.log(typeof(), );
 }
 
 
-decodeShortCode("gtoic")
+console.log(decodeShortCode("gtoic"))
