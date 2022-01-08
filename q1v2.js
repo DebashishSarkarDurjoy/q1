@@ -6,7 +6,7 @@ alps_array.forEach((item, i) => {
     alps_index[item] = i;
 });
 
-function generateShortCode(storeId, transactionId=0) {
+function generateShortCode(storeId, transactionId) {
     let result = "";
 
     let remainder = storeId % 26;
@@ -14,12 +14,18 @@ function generateShortCode(storeId, transactionId=0) {
 
     result += index_alps[quotient] + index_alps[remainder];
 
+    let first = parseInt(transactionId / (26*26));
+    let second = parseInt( (transactionId - (26*26*first)) / 26);
+    let third = parseInt( ((transactionId - (26*26*first) - (26*second))) - 1 );
+
+    result += index_alps[first] + index_alps[second] + index_alps[third];
+
     return result;
 
 }
 
 function decodeShortCode(shortCode) {
-  // Logic goes here
+ 
   let first = parseInt(alps_index[shortCode[0]]);
   let second = parseInt(alps_index[shortCode[1]]);
 
@@ -41,5 +47,5 @@ function decodeShortCode(shortCode) {
 }
 
 
-console.log(generateShortCode(188));
+console.log(generateShortCode(188, 7762));
 console.log(decodeShortCode("hglmn"));
