@@ -18,6 +18,28 @@ function generateShortCode(storeId, transactionId) {
     }
     ///store id
 
+    ///transactionid
+    let transactionReps = {};
+    let alpsPermutationsTransaction = [];
+
+    for (a1 of alps) {
+      for (a2 of alps) {
+        for (a3 of alps) {
+          alpsPermutationsTransaction.push(a1+a2+a3);
+        }
+      }
+    }
+
+    for (let i = 1; i <= 10000; i++) {
+      transactionReps[i] = alpsPermutationsTransaction[i-1];
+    }
+    ///transactionid
+
+    console.log(storeReps[storeId], transactionReps[transactionId]);
+
+}
+
+function generateDate() {
     ///date
     const date = ['1', '2', '3', '4', '5', ...alps];
     const month = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'];
@@ -46,27 +68,7 @@ function generateShortCode(storeId, transactionId) {
 
 
     ////date
-
-
-    ///transactionid
-    let transactionReps = {};
-    let alpsPermutationsTransaction = [];
-
-    for (a1 of alps) {
-      for (a2 of alps) {
-        for (a3 of alps) {
-          alpsPermutationsTransaction.push(a1+a2+a3);
-        }
-      }
-    }
-
-    for (let i = 1; i <= 10000; i++) {
-      transactionReps[i] = alpsPermutationsTransaction[i-1];
-    }
-    ///transactionid
-
-    console.log(storeReps[storeId], transactionReps[transactionId]);
-
 }
 
 generateShortCode(100,100);
+generateDate();
