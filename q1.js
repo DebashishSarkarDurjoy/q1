@@ -94,14 +94,14 @@ function generateDate() {
     ////date
 }
 
+console.log(transactionReps);
 
-
-var storeIds = [175, 42, 0, 9];
-var transactionIds = [9675, 23, 123, 7];
-
-for (sid of storeIds) {
-  for (tid of transactionIds) {
-    console.log(generateShortCode(sid, tid));
-    console.log(decodeShortCode(generateShortCode(sid, tid)));
-  }
-}
+// var storeIds = [175, 42, 0, 9];
+// var transactionIds = [9675, 23, 123, 7];
+//
+// for (sid of storeIds) {
+//   for (tid of transactionIds) {
+//     console.log(generateShortCode(sid, tid));
+//     console.log(decodeShortCode(generateShortCode(sid, tid)));
+//   }
+// }
